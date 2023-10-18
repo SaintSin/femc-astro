@@ -25,26 +25,27 @@ import { Image } from "astro:assets";
     <div>
       <p>Jonathan Walters</p>
       <p>Verified Graduate</p>
-      <p>
-        The team was very supportive and kept me motivated “ I started as a
-        total newbie with virtually no coding skills. I now work as a mobile
-        engineer for a big company. This was one of the best investments I’ve
-        made in myself. ”
+      <p>The team was very supportive and kept me motivated</p><p>
+        “ I started as a total newbie with virtually no coding skills. I now
+        work as a mobile engineer for a big company. This was one of the best
+        investments I’ve made in myself. ”
       </p>
     </div>
     <div>
       <p>Jeanette Harmon</p>
       <p>Verified Graduate</p>
-      <p>
-        An overall wonderful and rewarding experience “ Thank you for the
-        wonderful experience! I now have a job I really enjoy, and make a good
-        living while doing something I love. ”
+      <p>An overall wonderful and rewarding experience</p><p>
+        “ Thank you for the wonderful experience! I now have a job I really
+        enjoy, and make a good living while doing something I love. ”
       </p>
     </div>
     <div>
-      <p>Patrick Abrams</p><p>Verified Graduate</p><p>
+      <p>Patrick Abrams</p>
+      <p>Verified Graduate</p>
+      <p>
         Awesome teaching support from TAs who did the bootcamp themselves.
         Getting guidance from them and learning from their experiences was easy.
+      </p><p>
         “ The staff seem genuinely concerned about my progress which I find
         really refreshing. The program gave me the confidence necessary to be
         able to go out in the world and present myself as a capable junior
@@ -55,24 +56,91 @@ import { Image } from "astro:assets";
     </div>
     <div>
       <p>Kira Whittle</p>
-      <p>Verified Graduate</p> Such a life-changing experience. Highly
-      recommended! “ Before joining the bootcamp, I’ve never written a line of
-      code. I needed some structure from professionals who can help me learn
-      programming step by step. I was encouraged to enroll by a former student
-      of theirs who can only say wonderful things about the program. The entire
-      curriculum and staff did not disappoint. They were very hands-on and I
-      never had to wait long for assistance. The agile team project, in
-      particular, was outstanding. It took my learning to the next level in a
-      way that no tutorial could ever have. In fact, I’ve often referred to it
-      during interviews as an example of my developent experience. It certainly
-      helped me land a job as a full-stack developer after receiving multiple
-      offers. 100% recommend! ”
-    </div>
-    <div class="attribution">
-      Challenge by <a
-        href="https://www.frontendmentor.io?ref=challenge"
-        target="_blank">Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      <p>Verified Graduate</p>
+      <p>Such a life-changing experience. Highly recommended!</p>
+      <p>
+        “ Before joining the bootcamp, I’ve never written a line of code. I
+        needed some structure from professionals who can help me learn
+        programming step by step. I was encouraged to enroll by a former student
+        of theirs who can only say wonderful things about the program. The
+        entire curriculum and staff did not disappoint. They were very hands-on
+        and I never had to wait long for assistance. The agile team project, in
+        particular, was outstanding. It took my learning to the next level in a
+        way that no tutorial could ever have. In fact, I’ve often referred to it
+        during interviews as an example of my developent experience. It
+        certainly helped me land a job as a full-stack developer after receiving
+        multiple offers. 100% recommend! ”
+      </p>
     </div>
   </main>
 </Layout>
+
+<div class="attribution">
+  Challenge by <a
+    href="https://www.frontendmentor.io?ref=challenge"
+    target="_blank">Frontend Mentor</a
+  >. Coded by <a href="#">Your Name Here</a>.
+</div>
+
+<style lang="scss">
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+  :root {
+    --clr-primary: hsl(263, 55%, 52%);
+    --clr-secondary: hsl(217, 19%, 35%);
+    --clr-third: hsl(219, 29%, 14%);
+    --clr-neutral-1: hsl(0, 0%, 81%);
+    --clr-neutral-2: hsl(210, 46%, 95%);
+
+    --padding-sm: clamp(1rem, 3%, 1.5rem);
+    --padding-md: clamp(1.5rem, 6%, 3rem);
+    --padding-lg: clamp(3rem, 12%, 6rem);
+  }
+  main {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    max-width: 1280px;
+    font-size: 13px;
+    div {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.49);
+
+      p:nth-child(3) {
+        font-size: 2rem;
+      }
+    }
+
+    div:nth-child(1) {
+      background-color: var(--clr-primary);
+      grid-column: span 2;
+      grid-row: 1;
+    }
+    div:nth-child(2) {
+      background-color: var(--clr-secondary);
+      grid-column: span 1;
+      grid-row: 1;
+    }
+    div:nth-child(3) {
+      background: pink;
+      grid-column: 1;
+      grid-row: 2;
+    }
+    div:nth-child(4) {
+      background: blue;
+      grid-column: 2 / 4;
+      grid-row: 2;
+    }
+
+    div:nth-child(5) {
+      grid-column: 4;
+      grid-row: span 2;
+      background: red;
+    }
+  }
+</style>
