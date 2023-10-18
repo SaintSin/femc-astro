@@ -1,0 +1,100 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon";
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="wrapper">
+    <header><img src="src/assets/images/huddle/logo.svg" alt="Logo" /></header>
+    <main>
+      <img src="src/assets/images/huddle/illustration-mockups.svg" alt="Mock" />
+      <!-- <img src="src/assets/images/huddle/bg-desktop.svg" alt="Mock" /> -->
+      <div>
+        <h1>Build The Community Your Fans Will Love</h1>
+        <p>
+          Huddle re-imagines the way we build communities. You have a voice, but
+          so does your audience. Create connections with your users as you
+          engage in genuine discussion.
+        </p>
+        <button>Register</button>
+      </div>
+    </main>
+    <footer>
+      <ul>
+        <li><Icon name="mdi:facebook" /></li>
+        <li><Icon name="mdi:instagram" /></li>
+        <li><Icon name="mdi:twitter" /></li>
+      </ul>
+      <p class="attribution">
+        Challenge by <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank">Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer>
+  </div>
+</Layout>
+<style lang="scss">
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+  :root {
+    --clr-primary: hsl(257, 40%, 49%);
+    --clr-secondary: hsl(300, 69%, 71%);
+    --padding-sm: clamp(1rem, 3%, 1.5rem);
+    --padding-md: clamp(1.5rem, 6%, 3rem);
+    --padding-lg: clamp(3rem, 12%, 6rem);
+  }
+
+  body {
+    background: var(--clr-primary);
+    background-image: url("src/assets/images/huddle/bg-mobile.svg");
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4ch;
+
+    p {
+      max-width: 53ch;
+    }
+  }
+  button {
+    display: block;
+    background: white;
+    border: none;
+    border-radius: 100vh;
+  }
+
+  .wrapper {
+    margin-inline: auto;
+    margin-block-start: var(--padding-md);
+  }
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    max-width: 20ch;
+    line-height: 1.6;
+    margin-block-end: var(--padding-sm);
+  }
+  header {
+    margin-block-end: var(--padding-lg);
+    img {
+      max-width: 200px;
+    }
+  }
+  @media (min-width: 375px) {
+    body {
+      background-image: url("src/assets/images/huddle/bg-desktop.svg");
+    }
+    .wrapper {
+      max-width: 1280px;
+    }
+  }
+
+  footer ul li {
+    display: inline-block;
+  }
+</style>

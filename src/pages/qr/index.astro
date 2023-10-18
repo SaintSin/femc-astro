@@ -1,0 +1,67 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="container">
+    <img src="src/assets/images/qr/image-qr-code.png" alt="qr code" />
+    <h1>Improve your front-end skills by building projects.</h1>
+    <p>
+      Scan the QR code to visit Frontend Mentor and take your coding skills to
+      the next level
+    </p>
+  </div>
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      >Frontend Mentor</a
+    >. Coded by <a href="#">Your Name Here</a>.
+  </div>
+</Layout>
+<style lang="scss">
+  @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+  :root {
+    --padding-sm: clamp(1rem, 3%, 1.5rem);
+    --padding-md: clamp(1.5rem, 6%, 3rem);
+    --padding-lg: clamp(3rem, 12%, 6rem);
+  }
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+  body {
+    background-color: hsl(212, 45%, 89%);
+    font-family: "Outfit", sans-serif;
+  }
+  .container {
+    max-width: 370px;
+    background-color: white;
+    border-radius: 25px;
+    padding: var(--padding-sm);
+    font-size: 15px;
+    color: hsl(220, 15%, 55%);
+    text-align: center;
+    margin-inline: auto;
+    margin-block: auto;
+    margin-block-end: var(--padding-lg);
+    margin-block-start: var(--padding-lg);
+  }
+  .container img {
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+  }
+  .container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: hsl(218, 44%, 22%);
+  }
+  @media (min-width: 375px) {
+    .container {
+      max-width: 300px;
+    }
+  }
+</style>
