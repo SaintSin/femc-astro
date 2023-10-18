@@ -1,18 +1,22 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon";
+
+import logo from "@assets/images/huddle/logo.svg";
+import mock from "@assets/images/huddle/illustration-mockups.svg";
+import bgdesktop from "@assets/images/huddle/bg-desktop.svg";
+import bgmobile from "@assets/images/huddle/bg-mobile.svg";
 ---
 
 <Layout title="Welcome to Astro.">
   <div class="wrapper">
     <header>
-      <img src="../src/assets/images/huddle/logo.svg" alt="Logo" />
+      <Image src={logo} alt="Logo" />
     </header>
     <main>
-      <img
-        src="../src/assets/images/huddle/illustration-mockups.svg"
-        alt="Mock"
-      />
+      <Image src={mock} alt="Mock" />
+
       <!-- <img src="src/assets/images/huddle/bg-desktop.svg" alt="Mock" /> -->
       <div>
         <h1>Build The Community Your Fans Will Love</h1>
@@ -51,7 +55,7 @@ import { Icon } from "astro-icon";
 
   body {
     background: var(--clr-primary);
-    background-image: url("../src/assets/images/huddle/bg-mobile.svg");
+    background-image: url("/images/huddle/bg-mobile.svg");
     color: white;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
@@ -125,7 +129,7 @@ import { Icon } from "astro-icon";
   }
   @media (min-width: 475px) {
     body {
-      background-image: url("../src/assets/images/huddle/bg-desktop.svg");
+      background-image: url("/images/huddle/bg-desktop.svg");
     }
     main {
       grid-template-columns: 1.1fr 1fr;
