@@ -1,13 +1,17 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { Image } from "astro:assets";
+import person1 from "@images/testimonials/image-daniel.jpg";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <div>
-      <p>Daniel Clifford</p>
-      <p>Verified Graduate</p>
+    <div class="quote">
+      <header>
+        <Image src={person1} alt="person 1" />
+        <p>Daniel Clifford</p>
+        <p>Verified Graduate</p>
+      </header>
       <p>
         I received a job offer mid-course, and the subjects I learned were
         current, if not more so, in the company I joined. I honestly feel I got
@@ -23,25 +27,35 @@ import { Image } from "astro:assets";
       </p>
     </div>
     <div>
-      <p>Jonathan Walters</p>
-      <p>Verified Graduate</p>
-      <p>The team was very supportive and kept me motivated</p><p>
+      <header>
+        <Image src={person1} alt="person 1" />
+        <p>Jonathan Walters</p>
+        <p>Verified Graduate</p>
+      </header>
+      <p>The team was very supportive and kept me motivated</p>
+      <p>
         “ I started as a total newbie with virtually no coding skills. I now
         work as a mobile engineer for a big company. This was one of the best
         investments I’ve made in myself. ”
       </p>
     </div>
     <div>
-      <p>Jeanette Harmon</p>
-      <p>Verified Graduate</p>
+      <header>
+        <Image src={person1} alt="person 1" />
+        <p>Jeanette Harmon</p>
+        <p>Verified Graduate</p>
+      </header>
       <p>An overall wonderful and rewarding experience</p><p>
         “ Thank you for the wonderful experience! I now have a job I really
         enjoy, and make a good living while doing something I love. ”
       </p>
     </div>
     <div>
-      <p>Patrick Abrams</p>
-      <p>Verified Graduate</p>
+      <header>
+        <Image src={person1} alt="person 1" />
+        <p>Patrick Abrams</p>
+        <p>Verified Graduate</p>
+      </header>
       <p>
         Awesome teaching support from TAs who did the bootcamp themselves.
         Getting guidance from them and learning from their experiences was easy.
@@ -55,8 +69,11 @@ import { Image } from "astro:assets";
       </p>
     </div>
     <div>
-      <p>Kira Whittle</p>
-      <p>Verified Graduate</p>
+      <header>
+        <Image src={person1} alt="person 1" />
+        <p>Kira Whittle</p>
+        <p>Verified Graduate</p>
+      </header>
       <p>Such a life-changing experience. Highly recommended!</p>
       <p>
         “ Before joining the bootcamp, I’ve never written a line of code. I
@@ -96,6 +113,9 @@ import { Image } from "astro:assets";
     --padding-md: clamp(1.5rem, 6%, 3rem);
     --padding-lg: clamp(3rem, 12%, 6rem);
   }
+  body {
+    background: var(--clr-neutral-2);
+  }
   main {
     font-family: "Barlow Semi Condensed", sans-serif;
     margin-inline: auto;
@@ -103,36 +123,72 @@ import { Image } from "astro:assets";
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
-    gap: 1rem;
-    max-width: 1280px;
+    gap: 2.25rem;
+    max-width: 1110px;
     font-size: 13px;
+
+    header {
+      display: grid;
+      grid-template-columns: (3rem auto);
+      grid-template-rows: 1fr 1fr;
+      gap: 0 0.5rem;
+      grid-template-areas:
+        "photo name"
+        "photo pos";
+
+      img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 100vh;
+        border: 1px solid rgba(255, 255, 255, 0.589);
+        grid-area: photo;
+      }
+      p:nth-child(2) {
+        grid-area: name;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+      p:nth-child(3) {
+        grid-area: pos;
+        opacity: 50%;
+      }
+    }
     div {
-      padding: 1rem;
+      padding: 2rem;
       border-radius: 0.5rem;
       box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.49);
 
-      p:nth-child(3) {
-        font-size: 2rem;
+      &:not(header) > p:nth-child(2) {
+        font-size: 1.3rem;
+        line-height: 1;
+      }
+      &:not(header) > p:nth-child(3) {
+        opacity: 70%;
       }
     }
 
     div:nth-child(1) {
       background-color: var(--clr-primary);
+      color: white;
       grid-column: span 2;
       grid-row: 1;
     }
     div:nth-child(2) {
       background-color: var(--clr-secondary);
+      color: white;
+
       grid-column: span 1;
       grid-row: 1;
     }
     div:nth-child(3) {
-      background: pink;
+      background: white;
       grid-column: 1;
       grid-row: 2;
     }
     div:nth-child(4) {
-      background: blue;
+      background: var(--clr-third);
+      color: white;
+
       grid-column: 2 / 4;
       grid-row: 2;
     }
@@ -140,7 +196,12 @@ import { Image } from "astro:assets";
     div:nth-child(5) {
       grid-column: 4;
       grid-row: span 2;
-      background: red;
+      background: white;
     }
+  }
+  .quote {
+    background: url("/images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position-x: 75%;
   }
 </style>
