@@ -21,9 +21,9 @@ import { Icon } from "astro-icon";
     </main>
     <footer>
       <ul>
-        <li><Icon name="mdi:facebook" /></li>
-        <li><Icon name="mdi:instagram" /></li>
-        <li><Icon name="mdi:twitter" /></li>
+        <li><a href="#"><Icon name="mdi:facebook" /></a></li>
+        <li><a href="#"><Icon name="mdi:twitter" /></a></li>
+        <li><a href="#"><Icon name="mdi:instagram" /></a></li>
       </ul>
       <p class="attribution">
         Challenge by <a
@@ -54,29 +54,41 @@ import { Icon } from "astro-icon";
   }
   main {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 4ch;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2ch;
 
     p {
       max-width: 53ch;
     }
   }
   button {
-    display: block;
+    display: inline-blockk;
     background: white;
     border: none;
     border-radius: 100vh;
+    padding: 0.75rem 3rem;
+    margin-block-start: var(--padding-sm);
+    cursor: pointer;
+    box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.49);
+    transition: all 0.5s;
+    &:hover {
+      color: white;
+      background: var(--clr-secondary);
+    }
   }
 
   .wrapper {
+    max-width: 300px;
+
     margin-inline: auto;
     margin-block-start: var(--padding-md);
   }
   h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    max-width: 20ch;
     line-height: 1.6;
+    font-size: 1.5rem;
     margin-block-end: var(--padding-sm);
   }
   header {
@@ -85,16 +97,45 @@ import { Icon } from "astro-icon";
       max-width: 200px;
     }
   }
-  @media (min-width: 375px) {
+
+  footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    outline: 1px solid red;
+    li {
+      display: inline-block;
+      height: 2.5rem;
+      width: 2.5rem;
+      border: 1px solid white;
+      border-radius: 100vh;
+      padding: 0.5rem;
+      transition: all 0.5s;
+
+      &:hover {
+        border-color: var(--clr-secondary);
+        color: var(--clr-secondary);
+      }
+    }
+  }
+  @media (min-width: 475px) {
     body {
       background-image: url("src/assets/images/huddle/bg-desktop.svg");
+    }
+    main {
+      grid-template-columns: 1.1fr 1fr;
+      text-align: left;
     }
     .wrapper {
       max-width: 1280px;
     }
-  }
-
-  footer ul li {
-    display: inline-block;
+    h1 {
+      max-width: 20ch;
+      font-size: 2.5rem;
+    }
+    footer ul {
+      justify-content: flex-end;
+    }
   }
 </style>
