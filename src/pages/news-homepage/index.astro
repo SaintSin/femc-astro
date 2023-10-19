@@ -12,6 +12,7 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
 // 18:00
 
 // 1 hour
+// 1 hour - Desktop 90%
 ---
 
 <Layout title="News homepage">
@@ -20,11 +21,11 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
     <Image src={logo} alt="Logo" />
     <nav>
       <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">New</a></li>
-        <li><a href="">Popular</a></li>
-        <li><a href="">Trending</a></li>
-        <li><a href="">Categories</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Popular</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Categories</a></li>
       </ul>
     </nav>
   </header>
@@ -134,6 +135,22 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
     max-width: 1100px;
     margin-inline: auto;
   }
+
+  header {
+    display: flex;
+  }
+  nav ul {
+    display: flex;
+    li {
+      list-style-type: none;
+      a {
+        text-decoration: none;
+        &:hover {
+          color: var(--clr-primary);
+        }
+      }
+    }
+  }
   main {
     display: grid;
     gap: var(--space-m);
@@ -145,12 +162,7 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
       "head lead aside"
       "feature feature feature";
   }
-  nav ul {
-    display: flex;
-    li {
-      list-style-type: none;
-    }
-  }
+
   aside {
     background: var(--clr-neutral-4);
     color: var(--clr-neutral-1);
