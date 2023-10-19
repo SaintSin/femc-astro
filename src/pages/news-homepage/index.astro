@@ -1,0 +1,251 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import herodesktop from "@images/news-homepage/image-web-3-desktop.jpg";
+import logo from "@images/news-homepage/logo.svg";
+import card1 from "@images/news-homepage/image-retro-pcs.jpg";
+import card2 from "@images/news-homepage/image-top-laptops.jpg";
+import card3 from "@images/news-homepage/image-gaming-growth.jpg";
+
+// Est: 4 hours
+// 18:00
+
+// 1 hour
+---
+
+<Layout title="News homepage">
+  <header>
+    <!-- Logo -->
+    <Image src={logo} alt="Logo" />
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">New</a></li>
+        <li><a href="">Popular</a></li>
+        <li><a href="">Trending</a></li>
+        <li><a href="">Categories</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <Image src={herodesktop} alt="Hero" class="hero" />
+    <h1>The Bright Future of Web 3.0?</h1>
+    <div class="lead">
+      <p>
+        We dive into the next evolution of the web that claims to put the power
+        of the platforms back into the hands of the people. But is it really
+        fulfilling its promise?
+      </p>
+      <button> Read more</button>
+    </div>
+    <aside>
+      <h2>New</h2>
+      <article>
+        <h3>Hydrogen VS Electric Cars</h3>
+        <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+      </article>
+      <article>
+        <h3>The Downsides of AI Artistry</h3><p>
+          What are the possible adverse effects of on-demand AI image
+          generation?
+        </p>
+      </article>
+      <article>
+        <h3>Is VC Funding Drying Up?</h3>
+        <p>
+          Private funding by VC firms is down 50% YOY. We take a look at what
+          that means.
+        </p>
+      </article>
+    </aside>
+    <section class="features">
+      <div class="card">
+        <a href="#">
+          <Image src={card1} alt="Card 1" />
+
+          <p>01</p>
+          <p>Reviving Retro PCs</p>
+          <p>What happens when old PCs are given modern upgrades?</p></a
+        >
+      </div>
+
+      <div class="card">
+        <a href="#">
+          <Image src={card2} alt="Card 2" />
+          <p>02</p>
+          <p>Top 10 Laptops of 2022</p><p>
+            Our best picks for various needs and budgets.
+          </p></a
+        >
+      </div>
+
+      <div class="card">
+        <a href="#">
+          <Image src={card3} alt="Card 3" />
+          <p>03</p>
+          <p>The Growth of Gaming</p><p>
+            How the pandemic has sparked fresh opportunities.
+          </p></a
+        >
+      </div>
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a
+      href="https://www.frontendmentor.io?ref=challenge"
+      target="_blank">Frontend Mentor</a
+    >. Coded by <a href="#">Your Name Here</a>.
+  </div>
+</Layout>
+<style lang="scss">
+  * {
+    outline: 1px solid rgba(255, 0, 0, 0.146);
+  }
+  img {
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+  :root {
+    --clr-primary: hsl(35, 77%, 62%);
+    --clr-secondary: hsl(5, 85%, 63%);
+    --clr-neutral-1: hsl(36, 100%, 99%);
+    --clr-neutral-2: hsl(233, 8%, 79%);
+    --clr-neutral-3: hsl(236, 13%, 42%);
+    --clr-neutral-4: hsl(240, 100%, 5%);
+
+    --padding-sm: clamp(1rem, 3%, 1.5rem);
+    --padding-md: clamp(1.5rem, 6%, 3rem);
+    --padding-lg: clamp(3rem, 12%, 6rem);
+  }
+  body {
+    font-family: "Inter", sans-serif;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    object-fit: contain;
+  }
+  main,
+  header {
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+  main {
+    display: grid;
+    gap: var(--padding-sm);
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "hero hero aside"
+      "head lead aside"
+      "feature feature feature";
+  }
+  nav ul {
+    display: flex;
+    li {
+      list-style-type: none;
+    }
+  }
+  aside {
+    background: var(--clr-neutral-4);
+    color: var(--clr-neutral-1);
+    padding: var(--padding-md);
+    grid-area: aside;
+    h2 {
+      font-size: 2rem;
+    }
+    h2,
+    h3:hover {
+      color: var(--clr-primary);
+    }
+    article {
+      border-bottom: 1px solid red;
+
+      &:last-child {
+        border-bottom: 0px;
+      }
+      p {
+        font-size: 0.9rem;
+        margin-block-end: var(--padding-sm);
+        color: var(--clr-neutral-2);
+      }
+      h2,
+      h3 {
+        margin-block-end: var(--padding-sm);
+      }
+      h3 {
+        margin-block-start: var(--padding-sm);
+      }
+    }
+  }
+  .hero {
+    grid-area: hero;
+  }
+  .features {
+    grid-area: feature;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--padding-sm);
+
+    .card a {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "image numb"
+        "image sub"
+        "image lead";
+      gap: 0 var(--padding-sm);
+
+      text-decoration: none;
+
+      img {
+        grid-area: image;
+      }
+
+      p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        &:nth-child(2) {
+          color: var(--clr-neutral-2);
+          font-size: 2rem;
+          grid-area: numb;
+          font-weight: 600;
+        }
+        &:nth-child(3) {
+          color: var(--clr-neutral-4);
+          font-weight: 600;
+
+          grid-area: sub;
+
+          &:hover {
+            color: pink;
+          }
+        }
+        &:nth-child(4) {
+          color: var(--clr-neutral-3);
+          grid-area: lead;
+        }
+      }
+    }
+  }
+  h1 {
+    grid-area: head;
+  }
+  .lead {
+    grid-area: lead;
+  }
+  .card p:first-child {
+    color: red;
+  }
+  button {
+    color: white;
+    background: black;
+    border: none;
+  }
+</style>
