@@ -100,9 +100,9 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
   </div>
 </Layout>
 <style lang="scss">
-  * {
-    outline: 1px solid rgba(255, 0, 0, 0.146);
-  }
+  //   * {
+  //     outline: 1px solid rgba(255, 0, 0, 0.146);
+  //   }
   img {
   }
 
@@ -136,7 +136,7 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
   }
   main {
     display: grid;
-    gap: var(--padding-sm);
+    gap: var(--space-m);
 
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
@@ -157,14 +157,14 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
     padding: var(--padding-md);
     grid-area: aside;
     h2 {
-      font-size: 2rem;
+      font-size: var(--step-3);
     }
     h2,
     h3:hover {
       color: var(--clr-primary);
     }
     article {
-      border-bottom: 1px solid red;
+      border-bottom: 1px solid var(--clr-neutral-3);
 
       &:last-child {
         border-bottom: 0px;
@@ -190,7 +190,7 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
     grid-area: feature;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--padding-sm);
+    gap: var(--space-m);
 
     .card a {
       display: grid;
@@ -236,6 +236,9 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
   }
   h1 {
     grid-area: head;
+    font-size: var(--step-5);
+    font-weight: 800;
+    max-width: 9ch;
   }
   .lead {
     grid-area: lead;
@@ -247,5 +250,17 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
     color: white;
     background: black;
     border: none;
+    font-size: var(--step--2);
+    text-transform: uppercase;
+    padding: var(--space-2xs);
+  }
+
+  .attribution {
+    padding-top: 4rem;
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
   }
 </style>
