@@ -4,20 +4,19 @@ import { Image } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 
 import image1 from "@images/image1.jpg";
-import trans from "@images/image1-transparancy-tests-t.webp";
+import trans from "@images/image1-trans.webp";
 console.log(image1);
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <a href="/ex1-transitions/one" rel="prefetch"
-      ><h2>One</h2>
+    <h2>One</h2>
+    <a href="/ex1-transitions/one" rel="prefetch">
       <div>
         <Image
           src={trans}
           alt="image1"
-          width="500"
+          width="375"
           quality="low"
           transition:name="trans"
         />
@@ -35,6 +34,9 @@ console.log(image1);
 </Layout>
 
 <style>
+  body {
+    background: rgba(255, 204, 0, 0.5);
+  }
   main {
     margin: auto;
     padding: 1rem;
@@ -93,5 +95,9 @@ console.log(image1);
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 2rem;
     padding: 0;
+  }
+  img {
+    border-radius: 15px;
+    background: rgb(255, 204, 10);
   }
 </style>

@@ -5,7 +5,8 @@ import { ViewTransitions } from "astro:transitions";
 import Layout from "@layouts/Layout.astro";
 
 import image1 from "@images/image1.jpg";
-import trans from "@images/image1-transparancy-tests-b.webp";
+import trans from "@images/image1-trans.webp";
+import solid from "@images/image1-solid.webp";
 
 console.log(image1, trans);
 ---
@@ -14,7 +15,7 @@ console.log(image1, trans);
   <main>
     <a href="/ex1-transitions/">
       <h2>Index</h2><div>
-        <Image src={trans} alt="image1" width="750" transition:name="trans" />
+        <Image src={solid} alt="image1" width="750" transition:name="trans" />
       </div></a
     >
   </main>
@@ -28,6 +29,9 @@ console.log(image1, trans);
 </Layout>
 
 <style>
+  body {
+    background: rgba(255, 204, 0, 0.5);
+  }
   main {
     margin: auto;
     padding: 1rem;
@@ -86,5 +90,8 @@ console.log(image1, trans);
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 2rem;
     padding: 0;
+  }
+  img {
+    border-radius: 15px;
   }
 </style>
