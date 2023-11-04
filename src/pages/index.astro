@@ -4,25 +4,51 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h2>Front End Mentor</h2>
-    <a href="qr">QR Code</a>
-
-    <a href="huddle">Huddle</a>
-    <a href="testimonials">Testimonials</a>
-    <a href="news-homepage">News Homepage</a>
-    <h2>Components</h2>
-    <a href="switcher">Switcher with open-props</a>
-
-    <a href="chartjs">Chart JS</a>
-    <a href="lightbox">Lightbox</a>
-    <h2>Experiments</h2>
-    <a href="ex1-transitions">Tranistion Cut Out</a>
-    <a href="blog">The blog</a>
+    <section>
+      <header>
+        <h2>Front End Mentor</h2>
+      </header>
+      <a href="qr">QR Code</a>
+      <a href="huddle">Huddle</a>
+      <a href="testimonials">Testimonials</a>
+      <a href="news-homepage">News Homepage</a>
+    </section>
+    <section>
+      <header>
+        <h2>Components</h2>
+      </header>
+      <a href="switcher">Switcher with open-props</a>
+      <a href="chartjs">Chart JS</a>
+      <a href="lightbox">Lightbox</a>
+    </section>
+    <section>
+      <header>
+        <h2 class="gradient-text">Experiments</h2>
+      </header>
+      <a href="ex1-transitions">Transitions Cut Out</a>
+      <a href="blog">The blog</a>
+    </section>
+    <section>
+      <header><h3>To Dos?</h3></header>
+      <ul><li>Check Post-CSS usage with Open Props</li></ul>
+    </section>
   </main>
 </Layout>
+
 <style>
   @import "open-props/style";
-
+  body {
+    background-image: var(--gradient-18);
+  }
+  main {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding: var(--size-fluid-3);
+    background-image: var(--gradient-9);
+    max-width: 800px;
+    box-shadow: var(--shadow-3);
+    border-radius: var(--radius-conditional-3);
+  }
   a {
     display: block;
     color: var(--red-10);
@@ -31,5 +57,11 @@ import Layout from "../layouts/Layout.astro";
   h2 {
     color: var(--blue-10);
     font-size: var(--font-size-fluid-3);
+    letter-spacing: var(--font-letterspacing-0);
+  }
+  .gradient-text {
+    background: var(--gradient-20);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>

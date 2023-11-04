@@ -3,7 +3,7 @@ import Chart from "chart.js/auto";
 import { Debug } from "astro/components";
 
 const datad = await fetch(
-  "https://query1.finance.yahoo.com/v8/finance/chart/orion-usd?interval=1d&range=5d"
+  "https://query1.finance.yahoo.com/v8/finance/chart/orion-usd?interval=1d&range=5d",
 ).then((response) => response.json());
 const daty = datad.chart;
 // Components that are build-time rendered also log to the CLI.

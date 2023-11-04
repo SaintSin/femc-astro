@@ -8,15 +8,60 @@ console.log(blogEntries);
 ---
 
 <Layout title="Welcome to Astro.">
-  <h1>Blog</h1>
-  <ul>
-    {
-      blogEntries.map((post) => (
-        <li>
-          {" "}
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <main>
+    <h1>Blog</h1>
+    <ul>
+      {
+        blogEntries.map((post) => (
+          <li>
+            <h2>
+              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+            </h2>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
 </Layout>
+
+<style lang="scss">
+  @import "open-props/style";
+  body {
+    background-image: var(--gradient-18);
+  }
+  main {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding: var(--size-fluid-3);
+    background-image: var(--gradient-9);
+    max-width: 800px;
+    box-shadow: var(--shadow-3);
+    border-radius: var(--radius-conditional-3);
+  }
+  a {
+    display: block;
+    color: var(--red-10);
+    font-family: var(--font-serif);
+  }
+  h2 {
+    color: var(--blue-10);
+    font-size: var(--font-size-fluid-3);
+    letter-spacing: var(--font-letterspacing-0);
+  }
+  .gradient-text {
+    background: var(--gradient-20);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      h3 {
+        font-size: var(--font-size-fluid-3);
+        background-color: white;
+      }
+    }
+  }
+</style>

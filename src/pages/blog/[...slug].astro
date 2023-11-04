@@ -13,12 +13,50 @@ export async function getStaticPaths() {
 // 2. For your template, you can get the entry directly from the prop
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
 ---
 
 <Layout title="Welcome to Astro.">
-  <h1>Post</h1>
-  <h1>{entry.data.title}</h1>
   <main>
+    <header>
+      <h1>{entry.data.title}</h1>
+      <p>{entry.data.pubDate.toLocaleDateString(undefined, options)}</p>
+    </header>
     <Content />
   </main>
+  <section>
+    <p class="mono">
+      {JSON.stringify(entry)}
+    </p>
+  </section>
 </Layout>
+<style>
+  @import "open-props/style";
+  body {
+    background-image: var(--gradient-18);
+  }
+  main {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding: var(--size-fluid-3);
+    max-width: 800px;
+    box-shadow: var(--shadow-3);
+    border-radius: var(--radius-conditional-3);
+    background-image: var(--gradient-9);
+  }
+  section {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding: var(--size-fluid-3);
+    max-width: 800px;
+    box-shadow: var(--shadow-3);
+    border-radius: var(--radius-conditional-3);
+    background-image: var(--gradient-7);
+  }
+</style>
