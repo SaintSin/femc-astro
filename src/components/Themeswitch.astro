@@ -1,0 +1,53 @@
+---
+
+---
+
+<div>
+  <button class="btn-toggle">Toggle Dark-Mode</button>
+  <p class="btn-toggle">This will append class="dark" to body</p>
+</div>
+<style lang="scss">
+  div {
+    background-color: aqua;
+  }
+  .btn-toggle {
+    font-size: 2rem;
+    background: var(--bg-color);
+    color: var(--body-color);
+  }
+  p.btn-toggle {
+    color: blueviolet;
+    background-color: red;
+  }
+  body.dark {
+    div {
+      background-color: pink;
+    }
+  }
+</style>
+
+<script>
+  // https://codepen.io/adhuham/pen/BaNroxd
+  const btn = document.querySelector(".btn-toggle");
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  const currentTheme = localStorage.getItem("theme");
+
+  console.log(prefersDarkScheme, currentTheme);
+
+  if (currentTheme == "dark") {
+    document.body.classList.toggle("dark");
+  } else if (currentTheme == "light") {
+    document.body.classList.toggle("light");
+  }
+
+  btn.addEventListener("click", function () {
+    if (prefersDarkScheme.matches) {
+      document.body.classList.toggle("light");
+      var theme = document.body.classList.contains("light") ? "light" : "dark";
+    } else {
+      document.body.classList.toggle("dark");
+      var theme = document.body.classList.contains("dark") ? "dark" : "light";
+    }
+    localStorage.setItem("theme", theme);
+  });
+</script>
