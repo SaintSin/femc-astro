@@ -71,8 +71,7 @@ import dog3 from "@assets/images/chat/dog-image-3.jpg";
   </main>
 </Layout>
 <style lang="scss">
-  @import "open-props/style";
-
+  @import "https://unpkg.com/open-props";
   @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,700&display=swap");
   :root {
     --clr-primary: hsl(257, 40%, 49%);
@@ -161,6 +160,8 @@ import dog3 from "@assets/images/chat/dog-image-3.jpg";
     background: white;
   }
   .highlight {
+    display: flex;
+    justify-content: space-between;
     color: white;
     background: linear-gradient(0.25turn, var(--clr-grad-1), var(--clr-grad-2));
     span {
@@ -169,6 +170,8 @@ import dog3 from "@assets/images/chat/dog-image-3.jpg";
     }
   }
   .response {
+    display: flex;
+    justify-content: space-between;
     background: white;
     font-size: var(--font-size-00);
     border-radius: var(--radius-round);
@@ -184,12 +187,17 @@ import dog3 from "@assets/images/chat/dog-image-3.jpg";
   .phone .container {
     box-shadow: var(--shadow-6);
   }
+  .phone {
+    position: relative;
+  }
   .phone::before {
     content: " XXX";
     display: inline-block;
-
+    position: absolute;
+    z-index: -1;
+    left: -10%;
     background: linear-gradient(0.5turn, var(--clr-grad-1), var(--clr-grad-2));
-    width: 55%;
+    width: 75%;
 
     border-radius: 0 0 100vw 100vw;
     height: 85%;
