@@ -1,0 +1,187 @@
+---
+import Layout from "@layouts/LayoutMinimal.astro";
+import { Image } from "astro:assets";
+import preview from "@assets/images/chat/desktop-design.jpg";
+
+import avatar from "@assets/images/chat/avatar.jpg";
+import dog1 from "@assets/images/chat/dog-image-1.jpg";
+import dog2 from "@assets/images/chat/dog-image-2.jpg";
+import dog3 from "@assets/images/chat/dog-image-3.jpg";
+---
+
+<Layout title="Welcome to Astro.">
+  <Image src={preview} alt="Avatar" />
+
+  <main>
+    <section class="phone">
+      <div class="container">
+        <header>
+          <Image src={avatar} alt="Avatar" />
+          <p>Samuel Green</p>
+          <p>Available to Walk</p>
+        </header>
+        <section>
+          <div class="message send">
+            That sounds great. I’d be happy with that.
+          </div>
+          <div class="message send">
+            Could you send over some pictures of your dog, please?
+          </div>
+          <div class="message recieve">
+            <Image src={dog1} alt="Dog1" />
+            <Image src={dog2} alt="Dog1" />
+            <Image src={dog3} alt="Dog1" />
+          </div>
+          <div class="message recieve">
+            Here are a few pictures. She’s a happy girl!
+          </div>
+          <div class="message recieve">Can you make it?</div>
+          <div class="message send">
+            She looks so happy! The time we discussed works. How long shall I
+            take her out for?
+          </div>
+          <div class="message send highlight">
+            30 minute walk<span> $29</span>
+          </div>
+          <div class="message send highlight">
+            1 hour walk<span> $49</span>
+          </div>
+          <div class="response">Type a message…</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h1>Simple booking</h1>
+      <p>
+        Stay in touch with our dog walkers through the chat interface. This
+        makes it easy to discuss arrangements and make bookings. Once the walk
+        has been completed you can rate your walker and book again all through
+        the chat.
+      </p>
+    </section>
+    <div class="attribution">
+      Challenge by <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank">Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <div>#1 30 Minutes</div>
+    <div>#2 50 Minutes</div>
+  </main>
+</Layout>
+<style lang="scss">
+  @import "open-props/style";
+
+  @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,700&display=swap");
+  :root {
+    --clr-primary: hsl(257, 40%, 49%);
+    --clr-secondary: hsl(300, 69%, 71%);
+    --clr-txt-headlines: (271, 36%, 24%);
+    --clr-txt-neutral: hsl(270, 7%, 64%);
+
+    --clr-app-bg: hsl(270, 20%, 96%);
+    --clr-app-1: hsl(276, 55%, 52%);
+    --clr-app-2: hsl(271, 15%, 43%);
+
+    --clr-grad-1: hsl(293, 100%, 63%);
+    --clr-grad-2: hsl(264, 100%, 61%);
+
+    --padding-sm: clamp(1rem, 3%, 1.5rem);
+    --padding-md: clamp(1.5rem, 6%, 3rem);
+    --padding-lg: clamp(3rem, 12%, 6rem);
+  }
+  body {
+    font-family: "Rubik", sans-serif;
+    background-color: rgb(46, 96, 140);
+    font-size: 16px;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1440px;
+  }
+  .phone .container {
+    margin-left: 50%;
+    width: 250px;
+    background-color: var(--clr-app-bg);
+    border-radius: 25px;
+    border: 10px solid white;
+    section {
+      padding: 10px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "icon name"
+        "icon status";
+      background: linear-gradient(
+        0.75turn,
+        var(--clr-grad-1),
+        var(--clr-grad-2)
+      );
+
+      img {
+        width: var(--size-5);
+        height: var(--size-5);
+        grid-area: icon;
+        border-radius: var(--radius-round);
+        border: 1px solid white;
+      }
+    }
+    .message {
+      width: 65%;
+      font-size: var(--font-size-00);
+      margin-block-end: var(--size-2);
+      padding: var(--size-1);
+
+      img {
+        display: inline-block;
+        width: 30%;
+        height: 30%;
+        padding-inline-start: var(--size-2);
+      }
+    }
+  }
+  .send {
+    background: var(--clr-app-1);
+  }
+  .recieve {
+    background: white;
+  }
+  .highlight {
+    color: white;
+    background: linear-gradient(0.25turn, var(--clr-grad-1), var(--clr-grad-2));
+    span {
+      font-weight: var(--font-weight-7);
+      font-size: var(--font-size-0);
+    }
+  }
+  .response {
+    background: white;
+    font-size: var(--font-size-00);
+    border-radius: var(--radius-round);
+    padding: var(--size-2);
+  }
+  .cta {
+    background: rgba(255, 255, 255, 0.7);
+    outline: 1px solid red;
+    h1,
+    p {
+      max-width: 45ch;
+    }
+    h1 {
+      font-size: var(--font-size-6);
+      letter-spacing: var(--font-letterspacing-2);
+      margin-block-end: var(--size-fluid-2);
+      color: var(--clr-txt-headlines);
+    }
+    p {
+      line-height: var(--font-lineheight-4);
+      font-weight: var(--font-weight-4);
+      color: var(--clr-txt-neutral);
+    }
+  }
+</style>

@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/LayoutMinimal.astro";
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 
 import herodesktop from "@images/news-homepage/image-web-3-desktop.jpg";
 import logo from "@images/news-homepage/logo.svg";
@@ -30,7 +30,12 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
     </nav>
   </header>
   <main>
-    <Image src={herodesktop} alt="Hero" class="hero" />
+    <Image
+      src={herodesktop}
+      formats={["avif", "webp"]}
+      alt="Hero"
+      class="hero"
+    />
     <h1>The Bright Future of Web 3.0?</h1>
     <div class="lead">
       <p>
@@ -63,7 +68,7 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
     <section class="features">
       <div class="card">
         <a href="#">
-          <Image src={card1} alt="Card 1" />
+          <Image formats={["avif", "webp"]} src={card1} alt="Card 1" />
 
           <p>01</p>
           <p>Reviving Retro PCs</p>
@@ -73,7 +78,7 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
 
       <div class="card">
         <a href="#">
-          <Image src={card2} alt="Card 2" />
+          <Image formats={["avif", "webp"]} src={card2} alt="Card 2" />
           <p>02</p>
           <p>Top 10 Laptops of 2022</p><p>
             Our best picks for various needs and budgets.
@@ -83,7 +88,7 @@ import card3 from "@images/news-homepage/image-gaming-growth.jpg";
 
       <div class="card">
         <a href="#">
-          <Image src={card3} alt="Card 3" />
+          <Image formats={["avif", "webp"]} src={card3} alt="Card 3" />
           <p>03</p>
           <p>The Growth of Gaming</p><p>
             How the pandemic has sparked fresh opportunities.
