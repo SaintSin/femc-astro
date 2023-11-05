@@ -46,7 +46,7 @@ import dog3 from "@assets/images/chat/dog-image-3.jpg";
           <div class="message send highlight">
             1 hour walk<span> $49</span>
           </div>
-          <div class="response">Type a message…</div>
+          <div class="response">Type a message…<button> &gt;</button></div>
         </section>
       </div>
     </section>
@@ -93,7 +93,7 @@ import dog3 from "@assets/images/chat/dog-image-3.jpg";
   }
   body {
     font-family: "Rubik", sans-serif;
-    background-color: rgb(46, 96, 140);
+    background-color: rgb(192, 214, 233);
     font-size: 16px;
   }
   main {
@@ -130,6 +130,15 @@ import dog3 from "@assets/images/chat/dog-image-3.jpg";
         border-radius: var(--radius-round);
         border: 1px solid white;
       }
+      // Island
+      &::before {
+        content: "  ";
+        background-color: white;
+        width: 75%;
+        display: inline-block;
+        border-radius: 1rem;
+        left: -30%;
+      }
     }
     .message {
       width: 65%;
@@ -164,10 +173,34 @@ import dog3 from "@assets/images/chat/dog-image-3.jpg";
     font-size: var(--font-size-00);
     border-radius: var(--radius-round);
     padding: var(--size-2);
+
+    button {
+      border-radius: var(--radius-round);
+      background-color: black;
+      color: white;
+      font-size: 0.75rem;
+    }
+  }
+  .phone .container {
+    box-shadow: var(--shadow-6);
+  }
+  .phone::before {
+    content: " XXX";
+    display: inline-block;
+
+    background: linear-gradient(0.5turn, var(--clr-grad-1), var(--clr-grad-2));
+    width: 55%;
+
+    border-radius: 0 0 100vw 100vw;
+    height: 85%;
   }
   .cta {
     background: rgba(255, 255, 255, 0.7);
     outline: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     h1,
     p {
       max-width: 45ch;
@@ -182,6 +215,13 @@ import dog3 from "@assets/images/chat/dog-image-3.jpg";
       line-height: var(--font-lineheight-4);
       font-weight: var(--font-weight-4);
       color: var(--clr-txt-neutral);
+    }
+    &::after {
+      content: " X";
+      background-color: red;
+      display: inline-block;
+      width: 35%;
+      border-radius: 1rem;
     }
   }
 </style>
