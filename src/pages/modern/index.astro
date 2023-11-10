@@ -1,0 +1,248 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Image, Picture } from "astro:assets";
+import image1 from "@assets/images/image1.jpg";
+---
+
+<Layout title="News homepage">
+  <main class="grid-content">
+    <p>
+      It can be useful to have a system in place that's easy to go full-width,
+      or have a "breakout" section for calls to action or blockquotes, or other
+      things you want to call attention to.
+    </p>
+    <p class="breakout">
+      Traditionally, we use a container or wrapper, which we need to close, and
+      then open again, but thanks to grid, and with the recent additions of
+      subgrid to all the evergreen browsers, maybe there's a better way to do
+      things?
+    </p>
+    <p>
+      It has it's downsides, as the code is more complex, and it's not as
+      obvious how it works when we're so used to the old pattern.
+    </p>
+    <p>
+      That said, we shouldn't limit ourselves just because we are used to
+      working in a specific way.
+    </p>
+
+    <section class="full-width bg-primary section-padding flow">
+      <h2>This section has a different background-color</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
+        voluptates vitae reiciendis corporis molestias aspernatur vero eaque
+        obcaecati neque dolores veritatis repudiandae voluptas consectetur
+        voluptatum nobis maiores doloremque, nostrum deleniti!
+      </p>
+      <p>
+        Aspernatur, dignissimos. Quaerat corporis, itaque porro dolore ea a
+        placeat molestiae nihil voluptatem veniam facere, corrupti in vel,
+        voluptates enim soluta sint dolores? Quaerat laboriosam iusto voluptatem
+        accusantium ex alias?
+      </p>
+    </section>
+
+    <h2>Back to normal</h2>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto nam
+      at praesentium cumque rem molestias earum officia neque nemo sunt
+      laboriosam vero eum optio, saepe dolorem exercitationem quod asperiores
+      iste?
+    </p>
+    <p class="breakout call-to-action">
+      Not sure why, but we could set things up if ever you wanted random text to
+      be full-bleed without bothering with a div or anything on the outside of
+      it as well
+    </p>
+  </main>
+  <main class="grid-content">
+    <h1 class="">No More Containers</h1>
+    <p>
+      Kevin Powell <a
+        href="https://www.youtube.com/watch?v=c13gpBrnGEw"
+        target="_blank">New Approach to container classes</a
+      >
+    </p>
+    <p class="breakout">
+      Breakout Labore eiusmod anim ex laborum elit cupidatat non aliqua dolor∂
+      eiusmod nostrud. Ut reprehenderit do do consectetur aute non velit
+      occaecat laborum consequat labore minim culpa. Sit proident quis pariatur
+      officia adipisicing nulla veniam nulla enim nulla. Consectetur labore sit
+      magna esse et nisi anim ipsum sit ad fugiat officia cupidatat.
+    </p><p>
+      Dolor culpa consectetur magna ut mollit ut Lorem ea officia voluptate.
+      Aliqua qui pariatur adipisicing laborum. Non id consectetur ut labore ex.
+      Et occaecat sint reprehenderit aute. Irure Lorem quis in enim officia
+      tempor ut cupidatat sint. Sunt excepteur fugiat velit nostrud est ex sunt.
+    </p>
+
+    <h2 class="breakout">H2</h2>
+    <p class="breakout">
+      Cupidatat culpa excepteur ad mollit cupidatat cupidatat esse nostrud
+      cillum aliquip. Dolor labore nisi cupidatat ut nostrud ipsum adipisicing.
+      Consequat qui esse irure reprehenderit minim labore aliquip non consequat.
+      Excepteur commodo labore non ea veniam elit fugiat. Excepteur est eiusmod
+      velit cupidatat eiusmod nulla in velit. Aliquip qui ad adipisicing aliquip
+      adipisicing dolor exercitation amet est fugiat do id fugiat laboris. Culpa
+      adipisicing consequat nulla ut sit ad aute esse commodo sit occaecat
+      incididunt.
+    </p><p>
+      Commodo reprehenderit sit excepteur aliqua labore ipsum reprehenderit in
+      nulla proident laboris culpa id. Nulla deserunt veniam amet pariatur
+      incididunt id adipisicing cillum occaecat culpa qui. Laborum voluptate qui
+      commodo aliqua. Nulla excepteur reprehenderit voluptate pariatur duis sit
+      aliquip nisi amet. Do fugiat minim ad sint.
+    </p>
+    <p class="full-width">
+      Ex tempor aliqua deserunt id aute non dolor laboris aute proident. Velit
+      sit laborum deserunt exercitation cupidatat quis. Laboris et excepteur
+      adipisicing sint do exercitation aliqua fugiat Lorem nostrud nulla.
+      Voluptate commodo minim ut et.
+    </p>
+    <Image src={image1} alt="XXX" class="breakout" class="full-width" />
+    <section class="full-width three-cols">
+      <div><p>C1</p></div>
+      <div><p>C1</p></div>
+      <div><p>C1</p></div>
+    </section>
+  </main>
+  <section class="full-width-split-screen">
+    <div class="primary">
+      <p>
+        Dolor consectetur sit anim esse magna nostrud excepteur consectetur elit
+        adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+      </p>
+    </div>
+    <div class="secondary">
+      <p>
+        Pariatur elit veniam elit veniam officia est nostrud aute id. Culpa nisi
+        ad nisi ullamco exercitation. Eiusmod proident deserunt ea minim nostrud
+        culpa veniam id adipisicing culpa. Minim id non voluptate ad cupidatat.
+        Voluptate fugiat ut enim commodo.
+      </p>
+      <p>
+        Dolor consectetur sit anim esse magna nostrud excepteur consectetur elit
+        adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+      </p>
+    </div>
+  </section>
+</Layout>
+<style>
+  :root {
+    --padding-inline: 1rem;
+    --content-max-width: 85ch;
+  }
+  .grid-content {
+    --breakout-max-width: 100ch;
+    --breakout-size: calc(
+      (var(--breakout-max-width) - var(--content-max-width)) / 2
+    );
+
+    display: grid;
+    grid-template-columns:
+      [full-width-start] minmax(var(--padding-inline), 1fr)
+      [breakout-start] minmax(0, var(--breakout-size))
+      [content-start] min(
+        100% - (var(--padding-inline) * 2),
+        var(--content-max-width)
+      )
+      [content-end]
+      minmax(0, var(--breakout-size)) [breakout-end]
+      minmax(var(--padding-inline), 1fr) [full-width-end];
+  }
+
+  .grid-content > :not(.breakout, .full-width),
+  .full-width > :not(.breakout, .full-width) {
+    grid-column: content;
+  }
+
+  .grid-content > .breakout {
+    grid-column: breakout;
+  }
+
+  .grid-content > .full-width {
+    grid-column: full-width;
+
+    display: grid;
+    grid-template-columns: inherit;
+  }
+
+  img.full-width {
+    width: 100%;
+    max-height: 45vh;
+    object-fit: cover;
+  }
+
+  p {
+    font-size: var(--step-0);
+  }
+
+  .full-width {
+    background-color: red;
+  }
+  .three-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: aquamarine;
+    gap: 1rem;
+  }
+  .three-cols > * {
+    grid-column: span 1;
+    background-color: azure;
+  }
+
+  /* Two col full bleed stuff */
+  .primary {
+    background: hsla(119, 58%, 50%, 0.854);
+  }
+  .secondary {
+    background: hsla(349, 58%, 50%, 0.854);
+  }
+
+  .full-width-split-screen {
+    padding-block: 0;
+  }
+  .full-width-split-screen > :not(picture) {
+    padding-inline: var(--padding-inline);
+  }
+  @media (min-width: 600px) {
+    .full-width-split-screen {
+      display: grid;
+      grid-template-columns:
+        minmax(var(--padding-inline), 1fr)
+        minmax(0, calc(var(--content-max-width) / 2))
+        minmax(0, calc(var(--content-max-width) / 2))
+        minmax(var(--padding-inline), 1fr);
+      position: relative;
+    }
+    .full-width-split-screen > picture:first-child {
+      grid-column: 1 / 3;
+    }
+    .full-width-split-screen > picture:last-child {
+      grid-column: 3 / -1;
+    }
+    .full-width-split-screen > :not(picture) {
+      display: grid;
+      align-content: center;
+      justify-content: start;
+    }
+    .full-width-split-screen > :not(picture):first-child {
+      grid-column: 2 / 3;
+    }
+    .full-width-split-screen > :not(picture):last-child {
+      grid-column: 3 / 4;
+    }
+    .full-width-split-screen > :not(picture)::before {
+      content: " ";
+      position: absolute;
+      inset: 0;
+      background: inherit;
+    }
+    .full-width-split-screen > :not(picture):first-child::before {
+      grid-column: 1 / 2;
+    }
+    .full-width-split-screen > :not(picture):last-child::before {
+      grid-column: 4 / 5;
+    }
+  }
+</style>

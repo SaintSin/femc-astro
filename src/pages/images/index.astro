@@ -1,0 +1,157 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Image, Picture } from "astro:assets";
+import image1 from "@assets/images/image1.jpg";
+import cat3 from "@assets/images/1000/cat_3.jpg";
+
+import cat1 from "@assets/images/1000/cat_1.jpg";
+import cat2 from "@assets/images/1000/cat_2.jpg";
+import catp1 from "@assets/images/1000/cat_p1.jpg";
+import cats1 from "@assets/images/1000/cat_s1.jpg";
+---
+
+<Layout title="News homepage">
+  <h1>Image Tests</h1>
+  <div class="grid-two">
+    <div>
+      <Picture
+        src={image1}
+        alt="XXX"
+        class="picture-class"
+        formats={["avif", "webp"]}
+        quality={30}
+        widths={[100, 200, 1200]}
+      /><p>Picture: Preferred as it handles sourcsets</p>
+    </div>
+    <div>
+      <Image
+        src={image1}
+        alt="XXX"
+        class="image-class"
+        quality={1}
+        widths={[200, 400, 600]}
+      /><p>Image, with image quality set to 1!</p>
+    </div>
+    <div>
+      <Picture
+        src={cat3}
+        alt="XXX"
+        class="picture-class"
+        formats={["avif", "webp"]}
+        quality={50}
+        widths={[200, 400, 600]}
+      /><p>Format: Picture</p>
+    </div>
+    <div>
+      <Image
+        src={cat3}
+        alt="XXX"
+        class="image-class"
+        quality={50}
+        widths={[200, 400, 600]}
+      /><p>Format: Images</p>
+    </div>
+  </div>
+  <h2>More Tests</h2>
+  <div class="grid-two">
+    <div>
+      <Picture
+        src={catp1}
+        alt="XXX"
+        class="cover ar1"
+        formats={["avif", "webp"]}
+        quality={60}
+        widths={[500, 1300]}
+      /><p>Cover/Picture Aspect Ratio 1</p>
+    </div>
+    <div>
+      <Picture
+        src={catp1}
+        alt="XXX"
+        class="contain ar1"
+        formats={["avif", "webp"]}
+        quality={60}
+        widths={[500, 1300]}
+      /><p>Contain/Picture Aspect Ratio 1</p>
+    </div>
+    <div>
+      <Picture
+        src={catp1}
+        alt="XXX"
+        class="cover ar2"
+        formats={["avif", "webp"]}
+        quality={60}
+        widths={[500, 1300]}
+      /><p>Cover/Picture Aspect Ratio 2:1</p>
+    </div>
+    <div>
+      <Picture
+        src={catp1}
+        alt="XXX"
+        class="contain ar2"
+        formats={["avif", "webp"]}
+        quality={60}
+        widths={[500, 1300]}
+      /><p>Contain/Picture Aspect Ratio 2:1</p>
+    </div>
+    <div>
+      <Picture
+        src={catp1}
+        alt="XXX"
+        class="fill ar2"
+        formats={["avif", "webp"]}
+        quality={60}
+        widths={[500, 1300]}
+      /><p>Fill/Picture Aspect Ratio 2:1</p>
+      <Picture
+        src={catp1}
+        alt="XXX"
+        formats={["avif", "webp"]}
+        quality={60}
+        widths={[500, 1300]}
+      /><p>None</p>
+    </div>
+  </div>
+</Layout>
+<style>
+  .grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 80%;
+    margin: auto;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  picture {
+    outline: solid 14px pink;
+  }
+  img {
+    outline: solid 1px red;
+  }
+  .cover {
+    outline: dotted green 2px;
+    object-fit: cover;
+  }
+  .contain {
+    outline: dotted rgb(32, 0, 128) 2px;
+    object-fit: contain;
+  }
+  .contain {
+    outline: dotted rgb(32, 0, 128) 2px;
+    object-fit: contain;
+  }
+  .fill {
+    outline: dotted rgb(32, 128, 0) 2px;
+    object-fit: fill;
+  }
+  .ar1 {
+    aspect-ratio: 1;
+  }
+  .ar2 {
+    aspect-ratio: 2/ 1;
+  }
+</style>
