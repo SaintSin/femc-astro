@@ -1,0 +1,293 @@
+---
+import Layout from "@layouts/LayoutMinimal.astro";
+import { Image, Picture } from "astro:assets";
+import image1 from "@assets/images/image1.jpg";
+
+import cat1 from "@assets/images/1000/cat_1.jpg";
+import cat3 from "@assets/images/1000/cat_3.jpg";
+
+import cat2 from "@assets/images/1000/cat_2.jpg";
+import catp1 from "@assets/images/1000/cat_p1.jpg";
+import cats1 from "@assets/images/1000/cat_s1.jpg";
+---
+
+<Layout title="News homepage">
+  <h1>A modern Layout</h1>
+  <section class="full-width-split-screen">
+    <Picture
+      src={cat2}
+      formats={["avif", "webp"]}
+      widths={[400, 800, 1200]}
+      alt="Alt text for image"
+    />
+
+    <div class="primary">
+      <p>
+        Dolor consectetur sit anim esse magna nostrud excepteur consectetur elit
+        adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+      </p>
+    </div>
+  </section>
+  <section class="full-width-split-screen">
+    <div class="primary">
+      <h2>A Picture</h2>
+      <p>
+        Nulla non minim sunt anim tempor adipisicing nisi anim incididunt enim.
+        Deserunt est qui ex esse qui laborum est dolore cillum. Pariatur enim
+        irure exercitation magna cillum id exercitation nisi deserunt do
+        consequat quis voluptate. Commodo ut ad pariatur duis sunt velit veniam
+        minim.
+      </p>
+    </div>
+    <Picture
+      src={cat3}
+      formats={["avif", "webp"]}
+      widths={[400, 800, 1200]}
+      alt="Alt text for image"
+      class="testclass container-height"
+    />
+  </section>
+  <section class="full-width-split-screen testHeight">
+    <Picture
+      src={cat3}
+      formats={["avif", "webp"]}
+      widths={[400, 800, 1200, 1600]}
+      alt="Alt text for image"
+      class="biggy"
+    />
+    <div class="secondary">
+      <h2>A Picture</h2>
+      <p>
+        Et esse laborum minim occaecat minim dolor nulla elit officia ut ea id.
+        Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad sunt do
+        laboris id exercitation enim. Cupidatat nisi ad incididunt ullamco
+        consectetur est aliquip mollit tempor ex Lorem. Veniam ad mollit veniam
+        esse officia esse commodo elit aute nisi enim veniam laboris sit. Enim
+        enim officia Lorem ipsum est qui incididunt incididunt sit in eiusmod.
+      </p>
+      <p>
+        Et esse laborum minim occaecat minim dolor nulla elit officia ut ea id.
+        Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad sunt do
+        laboris id exercitation enim. Cupidatat nisi ad incididunt ullamco
+        consectetur est aliquip mollit tempor ex Lorem. Veniam ad mollit veniam
+        esse officia esse commodo elit aute nisi enim veniam laboris sit. Enim
+        enim officia Lorem ipsum est qui incididunt incididunt sit in eiusmod.
+      </p>
+      <p>
+        Et esse laborum minim occaecat minim dolor nulla elit officia ut ea id.
+        Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad sunt do
+        laboris id exercitation enim. Cupidatat nisi ad incididunt ullamco
+        consectetur est aliquip mollit tempor ex Lorem. Veniam ad mollit veniam
+        esse officia esse commodo elit aute nisi enim veniam laboris sit. Enim
+        enim officia Lorem ipsum est qui incididunt incididunt sit in eiusmod.
+      </p>
+      <p>
+        Et esse laborum minim occaecat minim dolor nulla elit officia ut ea id.
+        Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad sunt do
+        laboris id exercitation enim. Cupidatat nisi ad incididunt ullamco
+        consectetur est aliquip mollit tempor ex Lorem. Veniam ad mollit veniam
+        esse officia esse commodo elit aute nisi enim veniam laboris sit. Enim
+        enim officia Lorem ipsum est qui incididunt incididunt sit in eiusmod.
+      </p>
+      <p>
+        Nulla non minim sunt anim tempor adipisicing nisi anim incididunt enim.
+        Deserunt est qui ex esse qui laborum est dolore cillum. Pariatur enim
+        irure exercitation magna cillum id exercitation nisi deserunt do
+        consequat quis voluptate. Commodo ut ad pariatur duis sunt velit veniam
+        minim.
+      </p>
+      <p>
+        Nulla non minim sunt anim tempor adipisicing nisi anim incididunt enim.
+        Deserunt est qui ex esse qui laborum est dolore cillum. Pariatur enim
+        irure exercitation magna cillum id exercitation nisi deserunt do
+        consequat quis voluptate. Commodo ut ad pariatur duis sunt velit veniam
+        minim.
+      </p>
+      <p>
+        Do sunt ex do veniam consectetur enim. Ex ut irure excepteur dolor duis
+        et mollit amet proident velit cupidatat proident in eiusmod. Aliqua
+        aliquip mollit sit nisi amet reprehenderit Lorem eiusmod magna occaecat
+        magna. Duis amet aliquip dolore dolore voluptate consectetur. Deserunt
+        commodo do laboris elit culpa sint ut. Deserunt reprehenderit ex
+        pariatur deserunt aute laborum reprehenderit aliquip aliqua excepteur ut
+        enim nisi.
+      </p>
+      <p>
+        Do sunt ex do veniam consectetur enim. Ex ut irure excepteur dolor duis
+        et mollit amet proident velit cupidatat proident in eiusmod. Aliqua
+        aliquip mollit sit nisi amet reprehenderit Lorem eiusmod magna occaecat
+        magna. Duis amet aliquip dolore dolore voluptate consectetur. Deserunt
+        commodo do laboris elit culpa sint ut. Deserunt reprehenderit ex
+        pariatur deserunt aute laborum reprehenderit aliquip aliqua excepteur ut
+        enim nisi.
+      </p>
+    </div>
+  </section>
+  <section class="full-width-split-screen testHeight">
+    <div class="secondary">
+      <h2>A Picture</h2>
+      <p>
+        Et esse laborum minim occaecat minim dolor nulla elit officia ut ea id.
+        Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad sunt do
+        laboris id exercitation enim. Cupidatat nisi ad incididunt ullamco
+        consectetur est aliquip mollit tempor ex Lorem. Veniam ad mollit veniam
+        esse officia esse commodo elit aute nisi enim veniam laboris sit. Enim
+        enim officia Lorem ipsum est qui incididunt incididunt sit in eiusmod.
+      </p>
+      <p>
+        Et esse laborum minim occaecat minim dolor nulla elit officia ut ea id.
+        Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad sunt do
+        laboris id exercitation enim. Cupidatat nisi ad incididunt ullamco
+        consectetur est aliquip mollit tempor ex Lorem. Veniam ad mollit veniam
+        esse officia esse commodo elit aute nisi enim veniam laboris sit. Enim
+        enim officia Lorem ipsum est qui incididunt incididunt sit in eiusmod.
+      </p>
+      <p>
+        Et esse laborum minim occaecat minim dolor nulla elit officia ut ea id.
+        Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad sunt do
+        laboris id exercitation enim. Cupidatat nisi ad incididunt ullamco
+        consectetur est aliquip mollit tempor ex Lorem. Veniam ad mollit veniam
+        esse officia esse commodo elit aute nisi enim veniam laboris sit. Enim
+        enim officia Lorem ipsum est qui incididunt incididunt sit in eiusmod.
+      </p>
+      <p>
+        Et esse laborum minim occaecat minim dolor nulla elit officia ut ea id.
+        Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad sunt do
+        laboris id exercitation enim. Cupidatat nisi ad incididunt ullamco
+        consectetur est aliquip mollit tempor ex Lorem. Veniam ad mollit veniam
+        esse officia esse commodo elit aute nisi enim veniam laboris sit. Enim
+        enim officia Lorem ipsum est qui incididunt incididunt sit in eiusmod.
+      </p>
+      <p>
+        Nulla non minim sunt anim tempor adipisicing nisi anim incididunt enim.
+        Deserunt est qui ex esse qui laborum est dolore cillum. Pariatur enim
+        irure exercitation magna cillum id exercitation nisi deserunt do
+        consequat quis voluptate. Commodo ut ad pariatur duis sunt velit veniam
+        minim.
+      </p>
+
+      <p>
+        Do sunt ex do veniam consectetur enim. Ex ut irure excepteur dolor duis
+        et mollit amet proident velit cupidatat proident in eiusmod. Aliqua
+        aliquip mollit sit nisi amet reprehenderit Lorem eiusmod magna occaecat
+        magna. Duis amet aliquip dolore dolore voluptate consectetur. Deserunt
+        commodo do laboris elit culpa sint ut. Deserunt reprehenderit ex
+        pariatur deserunt aute laborum reprehenderit aliquip aliqua excepteur ut
+        enim nisi.
+      </p>
+    </div>
+    <Picture
+      src={cat1}
+      formats={["avif", "webp"]}
+      widths={[400, 800, 1200, 1600]}
+      alt="Alt text for image"
+      class="biggy"
+    />
+  </section>
+
+  <section class="full-width-split-screen">
+    <div class="secondary">
+      <p>
+        Dolor consectetur sit anim esse magna nostrud excepteur consectetur elit
+        adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+      </p>
+    </div>
+    <Picture
+      src={cat2}
+      formats={["avif", "webp"]}
+      widths={[400, 800, 1200, 1600]}
+      alt="Alt text for image"
+    />
+  </section>
+  <section class="full-width-split-screen">
+    <div class="primary">
+      <p>
+        Dolor consectetur sit anim esse magna nostrud excepteur consectetur elit
+        adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+      </p>
+    </div>
+    <div class="secondary">
+      <p>
+        Pariatur elit veniam elit veniam officia est nostrud aute id. Culpa nisi
+        ad nisi ullamco exercitation. Eiusmod proident deserunt ea minim nostrud
+        culpa veniam id adipisicing culpa. Minim id non voluptate ad cupidatat.
+        Voluptate fugiat ut enim commodo.
+      </p>
+      <p>
+        Dolor consectetur sit anim esse magna nostrud excepteur consectetur elit
+        adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+      </p>
+    </div>
+  </section>
+</Layout>
+<style is:global>
+  :root {
+    --clr-primary: hsl(131, 76%, 44%);
+    --clr-secondary: #cfe130d0;
+    --clr-accent: hsl(21deg 85% 60%);
+
+    --padding-inline: 1rem;
+    --content-max-width: 86ch;
+    --section-padding-block: 2.5rem;
+  }
+  img,
+  picture {
+    width: 100%;
+    height: auto;
+  }
+  body {
+    margin: 0;
+    font-family: system-ui;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: white;
+    background-color: var(--clr-primary);
+    background-image: linear-gradient(to bottom right, blue, purple, red);
+    background-blend-mode: multiply;
+  }
+
+  section {
+    padding-block: var(--section-padding-block);
+  }
+  .primary {
+    background: hsla(119, 58%, 50%, 0.854);
+  }
+  .secondary {
+    background: hsla(349, 58%, 50%, 0.854);
+  }
+  .call-to-action {
+    padding: 1rem;
+    background: hsl(0 0% 100% / 0.15);
+    font-size: var(--step-4);
+    font-style: italic;
+  }
+
+  .full-width-split-screen {
+    padding-block: 0;
+  }
+  .full-width-split-screen > :not(picture) {
+    padding-inline: var(--padding-inline);
+  }
+
+  @media (min-width: 600px) {
+    .full-width-split-screen {
+      display: grid;
+      grid-template-columns:
+        minmax(var(--padding-inline), 1fr)
+        minmax(0, calc(var(--content-max-width) / 2))
+        minmax(0, calc(var(--content-max-width) / 2))
+        minmax(var(--padding-inline), 1fr);
+      position: relative;
+    }
+    .full-width-split-screen > picture {
+      grid-column: 1 / 3;
+      outline: 3px solid orange;
+      border: 10px solid red;
+    }
+    .full-width-split-screen > div:first-child {
+      grid-column: 2 / 3;
+      outline: 3px solid orange;
+      border: 10px solid red;
+    }
+  }
+</style>

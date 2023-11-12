@@ -1,0 +1,386 @@
+---
+import Layout from "@layouts/LayoutMinimal.astro";
+import { Image, Picture } from "astro:assets";
+import image1 from "@assets/images/image1.jpg";
+
+import cat1 from "@assets/images/1000/cat_1.jpg";
+import cat3 from "@assets/images/1000/cat_3.jpg";
+
+import cat2 from "@assets/images/1000/cat_2.jpg";
+import catp1 from "@assets/images/1000/cat_p1.jpg";
+import cats1 from "@assets/images/1000/cat_s1.jpg";
+---
+
+<Layout title="News homepage">
+  <h1>A modern Layout</h1>
+  <Picture
+    src={cat1}
+    alt="XXX"
+    class="picture-class"
+    formats={["avif", "webp"]}
+    quality={30}
+    widths={[100, 200, 1200]}
+  />
+  <main class="flow">
+    <article class="grid-content">
+      <h1>One Layout To Rule Them All!</h1>
+      <p>
+        It can be useful to have a system in place that's easy to go full-width,
+        or have a "breakout" section for calls to action or blockquotes, or
+        other things you want to call attention to.
+      </p>
+      <p class="breakout secondary">
+        Traditionally, we use a container or wrapper, which we need to close,
+        and then open again, but thanks to grid, and with the recent additions
+        of subgrid to all the evergreen browsers, maybe there's a better way to
+        do things?
+      </p>
+      <p>
+        It has it's downsides, as the code is more complex, and it's not as
+        obvious how it works when we're so used to the old pattern.
+      </p>
+      <p>
+        That said, we shouldn't limit ourselves just because we are used to
+        working in a specific way.
+      </p>
+
+      <section class="full-width primary section-padding flow">
+        <h2>This section has a different background-color</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
+          voluptates vitae reiciendis corporis molestias aspernatur vero eaque
+          obcaecati neque dolores veritatis repudiandae voluptas consectetur
+          voluptatum nobis maiores doloremque, nostrum deleniti!
+        </p>
+        <p>
+          Aspernatur, dignissimos. Quaerat corporis, itaque porro dolore ea a
+          placeat molestiae nihil voluptatem veniam facere, corrupti in vel,
+          voluptates enim soluta sint dolores? Quaerat laboriosam iusto
+          voluptatem accusantium ex alias?
+        </p>
+      </section>
+
+      <h2>Back to normal</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto nam
+        at praesentium cumque rem molestias earum officia neque nemo sunt
+        laboriosam vero eum optio, saepe dolorem exercitationem quod asperiores
+        iste?
+      </p>
+      <p class="breakout call-to-action">
+        Not sure why, but we could set things up if ever you wanted random text
+        to be full-bleed without bothering with a div or anything on the outside
+        of it as well
+      </p>
+    </article>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+
+    <article>
+      <h1>Full-width on one side only!</h1>
+      <h3>Maybe need to use JS</h3>
+      <section class="full-width-split-screen">
+        <Picture
+          src={cat2}
+          formats={["avif", "webp"]}
+          widths={[400, 800, 1200]}
+          alt="Alt text for image"
+        />
+
+        <div class="primary">
+          <h2>A Picture A</h2>
+
+          <p>
+            Dolor consectetur sit anim esse magna nostrud excepteur consectetur
+            elit adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+          </p>
+        </div>
+      </section><hr />
+      <section class="full-width-split-screen">
+        <div class="primary">
+          <h2>A Picture B</h2>
+          <p>
+            Nulla non minim sunt anim tempor adipisicing nisi anim incididunt
+            enim. Deserunt est qui ex esse qui laborum est dolore cillum.
+            Pariatur enim irure exercitation magna cillum id exercitation nisi
+            deserunt do consequat quis voluptate. Commodo ut ad pariatur duis
+            sunt velit veniam minim.
+          </p>
+          <p>
+            Do sunt ex do veniam consectetur enim. Ex ut irure excepteur dolor
+            duis et mollit amet proident velit cupidatat proident in eiusmod.
+            Aliqua aliquip mollit sit nisi amet reprehenderit Lorem eiusmod
+            magna occaecat magna. Duis amet aliquip dolore dolore voluptate
+            consectetur. Deserunt commodo do laboris elit culpa sint ut.
+            Deserunt reprehenderit ex pariatur deserunt aute laborum
+            reprehenderit aliquip aliqua excepteur ut enim nisi.
+          </p>
+        </div>
+        <Picture
+          src={cat3}
+          formats={["avif", "webp"]}
+          widths={[400, 800, 1200]}
+          alt="Alt text for image"
+          class="testclass container-height"
+        />
+      </section>
+      <section class="full-width-split-screen testHeight">
+        <div class="secondary">
+          <h2>A Picture C</h2>
+          <p>
+            Et esse laborum minim occaecat minim dolor nulla elit officia ut ea
+            id. Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad
+            sunt do laboris id exercitation enim. Cupidatat nisi ad incididunt
+            ullamco consectetur est aliquip mollit tempor ex Lorem. Veniam ad
+            mollit veniam esse officia esse commodo elit aute nisi enim veniam
+            laboris sit. Enim enim officia Lorem ipsum est qui incididunt
+            incididunt sit in eiusmod.
+          </p>
+
+          <p>
+            Et esse laborum minim occaecat minim dolor nulla elit officia ut ea
+            id. Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad
+            sunt do laboris id exercitation enim. Cupidatat nisi ad incididunt
+            ullamco consectetur est aliquip mollit tempor ex Lorem. Veniam ad
+            mollit veniam esse officia esse commodo elit aute nisi enim veniam
+            laboris sit. Enim enim officia Lorem ipsum est qui incididunt
+            incididunt sit in eiusmod.
+          </p>
+        </div>
+      </section>
+      <section class="full-width-split-screen testHeight">
+        <div class="secondary">
+          <h2>A Picture D</h2>
+          <p>
+            Et esse laborum minim occaecat minim dolor nulla elit officia ut ea
+            id. Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad
+            sunt do laboris id exercitation enim. Cupidatat nisi ad incididunt
+            ullamco consectetur est aliquip mollit tempor ex Lorem. Veniam ad
+            mollit veniam esse officia esse commodo elit aute nisi enim veniam
+            laboris sit. Enim enim officia Lorem ipsum est qui incididunt
+            incididunt sit in eiusmod.
+          </p>
+          <p>
+            Et esse laborum minim occaecat minim dolor nulla elit officia ut ea
+            id. Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad
+            sunt do laboris id exercitation enim. Cupidatat nisi ad incididunt
+            ullamco consectetur est aliquip mollit tempor ex Lorem. Veniam ad
+            mollit veniam esse officia esse commodo elit aute nisi enim veniam
+            laboris sit. Enim enim officia Lorem ipsum est qui incididunt
+            incididunt sit in eiusmod.
+          </p>
+          <p>
+            Et esse laborum minim occaecat minim dolor nulla elit officia ut ea
+            id. Lorem deserunt officia nulla dolor ullamco in Lorem Lorem eu. Ad
+            sunt do laboris id exercitation enim. Cupidatat nisi ad incididunt
+            ullamco consectetur est aliquip mollit tempor ex Lorem. Veniam ad
+            mollit veniam esse officia esse commodo elit aute nisi enim veniam
+            laboris sit. Enim enim officia Lorem ipsum est qui incididunt
+            incididunt sit in eiusmod.
+          </p>
+        </div>
+        <Picture
+          src={cat1}
+          formats={["avif", "webp"]}
+          widths={[400, 800, 1200, 1600]}
+          alt="Alt text for image"
+          class="biggy"
+        />
+      </section>
+
+      <section class="full-width-split-screen">
+        <div class="third">
+          <h2>Secondary</h2>
+          <p>
+            Dolor consectetur sit anim esse magna nostrud excepteur consectetur
+            elit adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+          </p>
+        </div>
+        <Picture
+          src={cat2}
+          formats={["avif", "webp"]}
+          widths={[400, 800, 1200, 1600]}
+          alt="Alt text for image"
+        />
+      </section>
+      <section class="full-width-split-screen">
+        <div class="fourth">
+          <h2>Forth</h2>
+          <p>
+            Dolor consectetur sit anim esse magna nostrud excepteur consectetur
+            elit adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+          </p>
+        </div>
+        <div class="secondary">
+          <p>
+            Pariatur elit veniam elit veniam officia est nostrud aute id. Culpa
+            nisi ad nisi ullamco exercitation. Eiusmod proident deserunt ea
+            minim nostrud culpa veniam id adipisicing culpa. Minim id non
+            voluptate ad cupidatat. Voluptate fugiat ut enim commodo.
+          </p>
+          <p>
+            Dolor consectetur sit anim esse magna nostrud excepteur consectetur
+            elit adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
+          </p>
+        </div>
+      </section>
+    </article>
+  </main>
+</Layout>
+
+<style is:global>
+  :root {
+    --clr-primary: hsl(131, 76%, 44%);
+    --clr-secondary: #cfe130d0;
+    --clr-accent: hsl(21deg 85% 60%);
+
+    --padding-inline: 1rem;
+    --content-max-width: 86ch;
+    --section-padding-block: 2.5rem;
+  }
+
+  .flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+  }
+  .grid-content {
+    --breakout-max-width: 110ch;
+    --breakout-size: calc(
+      (var(--breakout-max-width) - var(--content-max-width)) / 2
+    );
+
+    display: grid;
+    grid-template-columns:
+      [full-width-start] minmax(var(--padding-inline), 1fr)
+      [breakout-start] minmax(0, var(--breakout-size))
+      [content-start] min(
+        100% - (var(--padding-inline) * 2),
+        var(--content-max-width)
+      )
+      [content-end]
+      minmax(0, var(--breakout-size)) [breakout-end]
+      minmax(var(--padding-inline), 1fr) [full-width-end];
+  }
+
+  .grid-content > :not(.breakout, .full-width),
+  .full-width > :not(.breakout, .full-width) {
+    grid-column: content;
+  }
+
+  .grid-content > .breakout {
+    grid-column: breakout;
+  }
+
+  .grid-content > .full-width {
+    grid-column: full-width;
+
+    display: grid;
+    grid-template-columns: inherit;
+  }
+
+  img.full-width {
+    width: 100%;
+    max-height: 45vh;
+    object-fit: cover;
+  }
+  /* End of Layout Univesral Section */
+
+  /* Full bleed, set up to work only with Picture elements */
+  .full-width-split-screen {
+    padding-block: 0;
+  }
+  .full-width-split-screen > :not(picture) {
+    padding-inline: var(--padding-inline);
+  }
+  .full-width-split-screen > picture {
+    grid-column: 1 / 3;
+    outline: 3px solid orange;
+  }
+  @media (min-width: 600px) {
+    .full-width-split-screen {
+      display: grid;
+      grid-template-columns:
+        minmax(var(--padding-inline), 1fr)
+        minmax(0, calc(var(--content-max-width) / 2))
+        minmax(0, calc(var(--content-max-width) / 2))
+        minmax(var(--padding-inline), 1fr);
+      position: relative;
+    }
+    .full-width-split-screen > picture:first-child {
+      grid-column: 1 / 3;
+    }
+    .full-width-split-screen > picture:last-child {
+      grid-column: 3 / -1;
+    }
+    .full-width-split-screen > :not(picture) {
+      display: grid;
+      align-content: center;
+      justify-content: start;
+    }
+    .full-width-split-screen > :not(picture):first-child {
+      grid-column: 2 / 3;
+    }
+    .full-width-split-screen > :not(picture):last-child {
+      grid-column: 3 / 4;
+    }
+    .full-width-split-screen > :not(picture)::before {
+      content: " ";
+      position: absolute;
+      inset: 0;
+      background: inherit;
+    }
+    .full-width-split-screen > :not(picture):first-child::before {
+      grid-column: 1 / 2;
+    }
+    .full-width-split-screen > :not(picture):last-child::before {
+      grid-column: 4 / 5;
+    }
+  }
+  /* Refular bits */
+
+  p {
+    font-size: var(--step-0);
+    max-width: 67ch;
+  }
+  img,
+  picture {
+    width: 100%;
+    height: auto;
+  }
+
+  body {
+    margin: 0;
+    font-family: system-ui;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: white;
+    background-color: var(--clr-primary);
+    background-image: linear-gradient(to bottom right, blue, purple, red);
+    background-blend-mode: multiply;
+  }
+
+  section {
+    padding-block: var(--section-padding-block);
+  }
+  .primary {
+    background: hsla(119, 58%, 50%, 0.854);
+  }
+  .secondary {
+    background: hsla(349, 58%, 50%, 0.854);
+  }
+  .third {
+    background: oklch(72.67% 0.284 339.88);
+  }
+  .fourth {
+    background: oklch(81.33% 0.304 148.24 / 86%);
+  }
+
+  .call-to-action {
+    padding: 1rem;
+    background: hsl(0 0% 100% / 0.15);
+    font-size: var(--step-4);
+    font-style: italic;
+  }
+</style>
