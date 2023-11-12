@@ -12,15 +12,20 @@ import cats1 from "@assets/images/1000/cat_s1.jpg";
 ---
 
 <Layout title="News homepage">
-  <h1>A modern Layout</h1>
+  <h1>A Modern Layout</h1>
+  <h2>Currently Incomplete</h2>
   <Picture
     src={cat1}
     alt="XXX"
     class="picture-class"
     formats={["avif", "webp"]}
     quality={30}
-    widths={[100, 200, 1200]}
+    widths={[100, 200, 1200, 1800, 2560]}
   />
+  <p>
+    Note widths on above picture upto 2560 which Lighthouse on MS Edge seems to
+    expect
+  </p>
   <main class="flow">
     <article class="grid-content">
       <h1>One Layout To Rule Them All!</h1>
@@ -73,15 +78,10 @@ import cats1 from "@assets/images/1000/cat_s1.jpg";
         of it as well
       </p>
     </article>
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    <hr />
 
     <article>
       <h1>Full-width on one side only!</h1>
-      <h3>Maybe need to use JS</h3>
+      <h2>Maybe need to use JS</h2>
       <section class="full-width-split-screen">
         <Picture
           src={cat2}
@@ -100,7 +100,7 @@ import cats1 from "@assets/images/1000/cat_s1.jpg";
         </div>
       </section><hr />
       <section class="full-width-split-screen">
-        <div class="primary">
+        <div class="primary flow">
           <h2>A Picture B</h2>
           <p>
             Nulla non minim sunt anim tempor adipisicing nisi anim incididunt
@@ -120,7 +120,7 @@ import cats1 from "@assets/images/1000/cat_s1.jpg";
           </p>
         </div>
         <Picture
-          src={cat3}
+          src={cats1}
           formats={["avif", "webp"]}
           widths={[400, 800, 1200]}
           alt="Alt text for image"
@@ -152,7 +152,7 @@ import cats1 from "@assets/images/1000/cat_s1.jpg";
         </div>
       </section>
       <section class="full-width-split-screen testHeight">
-        <div class="secondary">
+        <div class="secondary flow">
           <h2>A Picture D</h2>
           <p>
             Et esse laborum minim occaecat minim dolor nulla elit officia ut ea
@@ -183,11 +183,10 @@ import cats1 from "@assets/images/1000/cat_s1.jpg";
           </p>
         </div>
         <Picture
-          src={cat1}
+          src={catp1}
           formats={["avif", "webp"]}
           widths={[400, 800, 1200, 1600]}
           alt="Alt text for image"
-          class="biggy"
         />
       </section>
 
@@ -214,7 +213,7 @@ import cats1 from "@assets/images/1000/cat_s1.jpg";
             elit adipisicing. Veniam aliquip Lorem id aliqua ipsum esse.
           </p>
         </div>
-        <div class="secondary">
+        <div class="secondary flow">
           <p>
             Pariatur elit veniam elit veniam officia est nostrud aute id. Culpa
             nisi ad nisi ullamco exercitation. Eiusmod proident deserunt ea
