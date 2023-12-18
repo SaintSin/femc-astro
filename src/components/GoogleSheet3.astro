@@ -1,0 +1,23 @@
+---
+import { google } from "googleapis";
+
+const sheetID = "1qR0R3dC5BJ_FS66vb0OWJjf4SdF9cXPbEK0_HzVCp9o";
+
+const auth = await google.auth.getClient({
+  scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
+});
+const sheets = google.sheets({ version: "v4", auth });
+
+const response = await sheets.spreadsheets.values.get({
+  spreadsheetId: process.env.SHEET_ID,
+  range: "Sheet1!A2:A4",
+});
+---
+
+<h2>Go Sheet Yerself 3</h2>
+
+<h2>To Do</h2>
+
+<h3>And</h3>
+
+<p>https://www.youtube.com/watch?v=K6Vcfm7TA5U</p>

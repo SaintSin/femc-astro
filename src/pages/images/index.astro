@@ -10,8 +10,17 @@ import cat3 from "@assets/images/1000/cat_3.jpg";
 import catp1 from "@assets/images/1000/cat_p1.jpg";
 import cats1 from "@assets/images/1000/cat_s1.jpg";
 
+import image4 from "@assets/images/mono-asian.jpg";
+import image5 from "@images/placeholders/try-this.jpg";
+
 const optimizedBackground = await getImage({
   src: catp1,
+  format: "avif",
+  quality: 69,
+});
+
+const optimizedBackground2 = await getImage({
+  src: image4,
   format: "avif",
   quality: 69,
 });
@@ -146,10 +155,12 @@ const optimizedBackground = await getImage({
       />
     </div>
   </div>
+  <div class="backmask"></div>
 </Layout>
 <style
   define:vars={{
     bgx: `url(${optimizedBackground.src})`,
+    back2: `url(${optimizedBackground2.src})`,
   }}
 >
   .grid-two {
@@ -163,8 +174,17 @@ const optimizedBackground = await getImage({
     max-width: 100dvw;
     min-height: 100dvh;
     /* background-color: rgb(30, 117, 193); */
+    background-image: var(--back2);
+    background-size: 100%;
+  }
+  .backmask {
+    max-width: 100vw;
+    min-height: 100vh;
+    /* background-color: rgb(30, 117, 193); */
     background-image: var(--bgx);
     background-size: 100%;
+    mask-image: url(/images/mask-asian.svg);
+    /* mask-mode: alpha; */
   }
   .inner {
     max-width: 40dvw;

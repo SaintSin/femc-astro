@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import { rssSchema } from "@astrojs/rss";
+// import { rssSchema } from "@astrojs/rss";
 
 import mdx from "@astrojs/mdx";
 

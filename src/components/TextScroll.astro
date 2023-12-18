@@ -1,0 +1,55 @@
+---
+interface Props {
+  scrolltext: string;
+}
+const { scrolltext } = Astro.props;
+---
+
+<p>Add fallback</p>
+<div class="marquee">
+  {scrolltext}
+  <div>
+    <span>You spin me right round, baby. Like a record, baby.</span>
+    <span>You spin me right round, baby. Like a record, baby.</span>
+  </div>
+</div>
+
+<style>
+  body {
+    margin: 20px;
+  }
+
+  .marquee {
+    height: 6rem;
+    width: 100%;
+    font-size: 3rem;
+
+    overflow: hidden;
+    position: relative;
+  }
+
+  .marquee div {
+    display: block;
+    width: 200%;
+    height: 4rem;
+
+    position: absolute;
+    overflow: hidden;
+
+    animation: marquee 15s linear infinite;
+  }
+
+  .marquee span {
+    float: left;
+    width: 50%;
+  }
+
+  @keyframes marquee {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+</style>

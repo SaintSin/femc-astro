@@ -1,0 +1,24 @@
+---
+// https://www.youtube.com/watch?v=15y1D1mGKdE
+
+const result = await fetch(
+  "https://script.google.com/macros/s/AKfycbzO00Ef3g0PeorPCfzRq1x1qPHLOKaV6zYw8nxif_rFJBQ4fVvqZ5YY0gV2bi-NhVR45Q/exec",
+);
+
+const { data } = await result.json();
+console.log(data);
+---
+
+<h2>Go Sheet Yerself</h2>
+<p>https://www.youtube.com/watch?v=15y1D1mGKdE</p>
+<p>
+  https://docs.google.com/spreadsheets/d/1qR0R3dC5BJ_FS66vb0OWJjf4SdF9cXPbEK0_HzVCp9o/edit#gid=0
+</p>
+<p>the mustache brackets in the code for dat destructure it.</p>
+
+{data.map((i) => <p>{JSON.stringify(i)}</p>)}
+
+<h2>To Do</h2>
+<p>
+  https://theoephraim.github.io/node-google-spreadsheet/#/guides/authentication
+</p>
